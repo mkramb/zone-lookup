@@ -1,0 +1,12 @@
+{
+  "name": "zoneswitch",
+  "version": "0.0.1",
+  "main": "index.html",
+  "author":{
+      "name": "Mitja Kramberger",
+      "url": "https://github.com/mkramb/zoneswitch"
+  },
+  "window": {
+    "toolbar": true
+  }
+}

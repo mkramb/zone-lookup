@@ -1,0 +1,14 @@
+{
+  "name": "zoneswitch",
+  "version": "0.0.1",
+  "author": {
+    "name": "Mitja Kramberger",
+    "url": "https://github.com/mkramb/zoneswitch"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-node-webkit-builder": "~0.1.17",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-shell": "~0.6.4"
+  }
+}
