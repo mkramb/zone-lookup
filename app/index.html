@@ -3,40 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>zoneswitch</title>
-  <link rel="stylesheet" type="text/css" href="./assets/app.css">
+  <link rel="stylesheet" type="text/css" href="static/lib.css">
+  <link rel="stylesheet" type="text/css" href="static/app.css">
 </head>
 
 <body ng-controller="ZoneCtrl">
   <div class="ng-cloak">
-    <ul>
-      <li ng-repeat="phone in phones">
-        {{phone.name}}
-        <p>{{phone.snippet}}</p>
-      </li>
-    </ul>
+    <button class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
+    <hr>
+    <div collapse="isCollapsed">
+      <div class="well well-lg">Some content</div>
+    </div>
   </div>
 
-  <div class="from">
-    <input type="date" name="date">
-    <input type="time" name="time">
-    <select name="timezone">
-      <option value="Africa/Abidjan">Africa/Abidjan</option>
-      <option value="America/Cancun">America/Cancun</option>
-      <option value="Europe/Luxembourg">Europe/Luxembourg</option>
-    </select>
-  </div>
-
-  <div class="to">
-    <span>date time</span>
-    <select name="timezone">
-      <option value="Africa/Abidjan">Africa/Abidjan</option>
-      <option value="America/Cancun">America/Cancun</option>
-      <option value="Europe/Luxembourg">Europe/Luxembourg</option>
-    </select>
-  </div>
-
-  <script src="./assets/lib.js"></script>
-  <script src="./assets/app.js"></script>
+  <script src="static/lib.js"></script>
+  <script src="static/app.js"></script>
 
 </body>
 </html>

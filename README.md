@@ -2,16 +2,16 @@ Install
 ----
 
 * npm install
-* grunt install
+* grunt webkit
 * grunt run
 
-Workflow
+Development
 ----
 
-* grunt run
+* grunt run-dev
 * grunt watch
 
 New release
 ----
 
-* grunt install
+* grunt webkit

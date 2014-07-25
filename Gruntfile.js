@@ -25,11 +25,33 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('./package.json'),
+    availabletasks: {
+      tasks: {}
+    },
     nodewebkit: {
       options: NW_OPTIONS,
       src: [
         './build/*'
       ]
+    },
+    uglify: {
+      options: {
+        except: ['jQuery', 'bootstrap', 'angular']
+      },
+      build: {
+        files: {
+          './build/static/app.js': [ './build/static/app.js' ],
+          './build/static/lib.js': [ './build/static/lib.js' ]
+        }
+      }
+    },
+    cssmin: {
+      build: {
+        files: {
+          './build/static/app.css': [ './build/static/app.css' ],
+          './build/static/lib.css': [ './build/static/lib.css' ]
+        }
+      }
     },
     clean: [
       './releases/**/*',
@@ -37,7 +59,7 @@ module.exports = function(grunt) {
       './build/*'
     ],
     copy: {
-      lib: {
+      app: {
         expand: true,
         flatten: true,
         src: [
@@ -45,6 +67,12 @@ module.exports = function(grunt) {
           './app/package.json'
         ],
         dest: './build/'
+      },
+      fonts: {
+        expand: true,
+        flatten: true,
+        src: [ './app/lib/bootstrap/dist/fonts/*' ],
+        dest: './build/fonts'
       }
     },
     less: {
@@ -53,18 +81,33 @@ module.exports = function(grunt) {
           paths: [ './app/css']
         },
         files: {
-          './build/assets/app.css': './app/css/app.less'
+          './build/static/app.css': './app/css/app.less'
         }
       }
     },
-    browserify: {
-      lib: {
-        src: [ './app/lib/angular/angular.js' ],
-        dest: './build/assets/lib.js'
+    concat: {
+      js: {
+        src: [
+          './app/lib/jquery/dist/jquery.js',
+          './app/lib/angular/angular.js',
+          './app/lib/bootstrap/dist/js/bootstrap.js',
+          './app/lib/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js',
+          './app/lib/angular-ui-bootstrap-bower/ui-bootstrap.js'
+        ],
+        dest: './build/static/lib.js'
       },
+      css: {
+        src: [
+          './app/lib/bootstrap/dist/css/bootstrap.css',
+          './app/lib/bootstrap/dist/css/bootstrap-theme.css'
+        ],
+        dest: './build/static/lib.css'
+      }
+    },
+    browserify: {
       client: {
         src: './app/js/app.js',
-        dest: './build/assets/app.js'
+        dest: './build/static/app.js'
       }
     },
     shell: {
@@ -97,10 +140,24 @@ module.exports = function(grunt) {
           spawn: false
         }
       }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 9000,
+          base: 'build',
+          open: true
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-node-webkit-builder');
+  grunt.loadNpmTasks('grunt-available-tasks');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -108,21 +165,24 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', [ 'run' ]);
-  grunt.registerTask('install', [
+  grunt.registerTask('default', [ 'availabletasks' ]);
+  grunt.registerTask('webkit', [
     'shell:install',
     'build',
+    'uglify:build',
+    'cssmin:build',
     'nodewebkit'
   ]);
   grunt.registerTask('build',   [
-    'copy:lib',
-    'browserify:lib',
+    'clean',
+    'copy:app',
+    'copy:fonts',
+    'concat:js',
+    'concat:css',
     'browserify:client',
     'less:dev'
   ]);
-  grunt.registerTask('run', [
-    'build',
-    'shell:run'
-  ]);
+  grunt.registerTask('run-dev', [ 'connect:server:keepalive' ]);
+  grunt.registerTask('run', [ 'shell:run' ]);
 
 };
