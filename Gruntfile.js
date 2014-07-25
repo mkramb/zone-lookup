@@ -72,9 +72,10 @@ module.exports = function(grunt) {
         options: SHELL_OPTIONS,
         command: function() {
           return [
+            'cd src',
             'bower cache clean',
             'bower install',
-            'cd src && npm install'
+            'npm install'
           ].join(' && ');
         }
       },
@@ -88,8 +89,8 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: [
-          './src/**',
-          './src/**/*'
+          './src/**/*',
+          './src/**'
         ],
         tasks: [ 'build' ],
         options: {
