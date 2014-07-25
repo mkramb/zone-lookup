@@ -1,0 +1,10 @@
+{
+  "name": "zoneswitch",
+  "ignore": [
+    "**/.*",
+    "lib"
+  ],
+  "dependencies": {
+    "angular": "~1.2.3"
+  }
+}

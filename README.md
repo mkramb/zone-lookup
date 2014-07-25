@@ -8,5 +8,10 @@ Install
 Workflow
 ----
 
-* grunt build
 * grunt run
+* grunt watch
+
+New release
+----
+
+* grunt install
