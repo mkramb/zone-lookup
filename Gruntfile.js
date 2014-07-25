@@ -41,8 +41,8 @@ module.exports = function(grunt) {
         expand: true,
         flatten: true,
         src: [
-          './src/index.html',
-          './src/package.json'
+          './app/index.html',
+          './app/package.json'
         ],
         dest: './build/'
       }
@@ -50,20 +50,20 @@ module.exports = function(grunt) {
     less: {
       dev: {
         options: {
-          paths: [ './src/css']
+          paths: [ './app/css']
         },
         files: {
-          './build/assets/app.css': './src/css/app.less'
+          './build/assets/app.css': './app/css/app.less'
         }
       }
     },
     browserify: {
       lib: {
-        src: [ './src/lib/angular/angular.js' ],
+        src: [ './app/lib/angular/angular.js' ],
         dest: './build/assets/lib.js'
       },
       client: {
-        src: './src/js/app.js',
+        src: './app/js/app.js',
         dest: './build/assets/app.js'
       }
     },
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
         options: SHELL_OPTIONS,
         command: function() {
           return [
-            'cd src',
+            'cd app',
             'bower cache clean',
             'bower install',
             'npm install'
@@ -89,8 +89,8 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: [
-          './src/**/*',
-          './src/**'
+          './app/**/*',
+          './app/**'
         ],
         tasks: [ 'build' ],
         options: {
