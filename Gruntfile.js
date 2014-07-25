@@ -137,6 +137,7 @@ module.exports = function(grunt) {
         ],
         tasks: [ 'build' ],
         options: {
+          livereload: true,
           spawn: false
         }
       }
