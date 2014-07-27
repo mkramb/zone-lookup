@@ -30,5 +30,5 @@ angular.module('app.controllers', [])
       }
 
       $scope.timeTo = null;
-    });
+    }, true);
   }]);
