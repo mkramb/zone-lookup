@@ -2,11 +2,22 @@
   "name": "zoneswitch",
   "version": "0.0.1",
   "main": "index.html",
-  "author":{
-      "name": "Mitja Kramberger",
-      "url": "https://github.com/mkramb/zoneswitch"
+  "author": {
+    "name": "Mitja Kramberger",
+    "url": "https://github.com/mkramb/zoneswitch"
   },
   "window": {
-    "toolbar": true
+    "toolbar": false,
+    "frame": true,
+    "width": 740,
+    "min_width": 740,
+    "max_width": 740,
+    "height": 54,
+    "max_height": 54,
+    "min_height": 54
+  },
+  "dependencies": {
+    "moment": "^2.7.0",
+    "moment-timezone": "^0.2.0"
   }
 }

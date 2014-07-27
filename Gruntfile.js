@@ -89,10 +89,8 @@ module.exports = function(grunt) {
       js: {
         src: [
           './app/lib/jquery/dist/jquery.js',
-          './app/lib/angular/angular.js',
           './app/lib/bootstrap/dist/js/bootstrap.js',
-          './app/lib/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js',
-          './app/lib/angular-ui-bootstrap-bower/ui-bootstrap.js'
+          './app/lib/angular/angular.js'
         ],
         dest: './build/static/lib.js'
       },

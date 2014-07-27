@@ -1,10 +1,49 @@
 @import "angular.less";
 
-body {
-  padding-top: 50px;
+@color-background: #f7f7f9;
+@color-border: #cccccc;
+@color-badge: #428bca;
+
+html, body {
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
 }
 
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+.container {
+  width: 740px;
+  padding: 10px;
+  background-color: @color-background;
+
+  input, select {
+    border: 1px solid @color-border;
+  }
+
+  input {
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: 10px;
+    width: 120px;
+    height: 34px;
+  }
+
+  select {
+    padding: 6px;
+    width: 200px;
+    height: 32px;
+  }
+
+  .badge {
+    margin-top: 8px;
+    margin-right: 8px;
+    background-color: @color-badge;
+  }
+
+  .from, .to {
+    float: left;
+  }
+
+  .from {
+    margin-right: 14px;
+  }
 }
