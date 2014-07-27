@@ -1,6 +1,7 @@
 @import "angular.less";
 
 @color-background: #f7f7f9;
+@color-disabled: #eeeeee;
 @color-border: #cccccc;
 @color-badge: #428bca;
 
@@ -25,6 +26,10 @@ html, body {
     margin-right: 10px;
     width: 120px;
     height: 34px;
+  }
+
+  input[readonly="readonly"] {
+    background-color: @color-disabled;
   }
 
   select {

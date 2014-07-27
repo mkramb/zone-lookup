@@ -11,21 +11,13 @@
 
   <div class="container ng-cloak">
     <div class="from">
-      <input type="time" name="from_time">
-      <select name="from_timezone">
-        <option value="Africa/Abidjan">Africa/Abidjan</option>
-        <option value="America/Cancun">America/Cancun</option>
-        <option value="Europe/Luxembourg">Europe/Luxembourg</option>
-      </select>
+      <input data-ng-model="timeFrom" type="time">
+      <select data-ng-model="zoneFrom" data-ng-options="zone for zone in zones"></select>
     </div>
     <div class="to">
       <span class="badge">to</span>
-      <input type="text" name="to_time" readonly="readonly">
-      <select name="to_timezone">
-        <option value="Africa/Abidjan">Africa/Abidjan</option>
-        <option value="America/Cancun">America/Cancun</option>
-        <option value="Europe/Luxembourg">Europe/Luxembourg</option>
-      </select>
+      <input data-ng-model="timeTo" type="text" readonly="readonly">
+      <select data-ng-model="zoneTo" data-ng-options="zone for zone in zones"></select>
     </div>
   </div>
 

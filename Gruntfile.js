@@ -31,7 +31,8 @@ module.exports = function(grunt) {
     nodewebkit: {
       options: NW_OPTIONS,
       src: [
-        './build/*'
+        './build/*',
+        './build/**/*'
       ]
     },
     uglify: {
