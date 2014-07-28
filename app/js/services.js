@@ -14,7 +14,7 @@ function ZoneService () {
       .set('minute', values[1]);
 
     return timeFrom.tz(zoneTo)
-      .format('HH:mm a');
+      .format('hh:mm a');
   };
 }
 
