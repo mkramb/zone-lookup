@@ -1,5 +1,5 @@
 {
-  "name": "zoneswitch",
+  "name": "zone-lookup",
   "ignore": [
     "**/.*",
     "lib"

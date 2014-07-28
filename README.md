@@ -1,4 +1,4 @@
-# Zoneswitch
+# Zone-lookup
 ![ScreenShot](http://imgh.us/screenshot_20.png)
 
 ### Install

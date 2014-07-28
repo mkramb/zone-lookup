@@ -1,10 +1,10 @@
 {
-  "name": "zoneswitch",
+  "name": "zone-lookup",
   "version": "0.0.1",
   "main": "index.html",
   "author": {
     "name": "Mitja Kramberger",
-    "url": "https://github.com/mkramb/zoneswitch"
+    "url": "https://github.com/mkramb/zone-lookup"
   },
   "window": {
     "toolbar": false,
