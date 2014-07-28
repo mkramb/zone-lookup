@@ -3,7 +3,7 @@
 function ZoneService () {
   var moment = require('moment-timezone');
 
-  this.current = moment();
+  this.current = moment().format('HH:mm');
   this.zones = moment.tz.names();
   this.zones.sort();
 
@@ -13,7 +13,8 @@ function ZoneService () {
       .set('hour', values[0])
       .set('minute', values[1]);
 
-    return timeFrom.tz(zoneTo);
+    return timeFrom.tz(zoneTo)
+      .format('HH:mm a');
   };
 }
 

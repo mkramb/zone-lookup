@@ -2,7 +2,7 @@
 
 function ZoneCtrl ($scope, ZoneService) {
   $scope.zones = ZoneService.zones;
-  $scope.timeFrom = ZoneService.current.format('HH:mm');
+  $scope.timeFrom = ZoneService.current;
 
   $scope.$watch('[zoneFrom, zoneTo, timeFrom]', function() {
     var update = (
@@ -16,7 +16,7 @@ function ZoneCtrl ($scope, ZoneService) {
         $scope.timeFrom,
         $scope.zoneFrom,
         $scope.zoneTo
-      ).format('HH:mm a');
+      );
 
       return;
     }
