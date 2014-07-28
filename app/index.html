@@ -11,13 +11,11 @@
 
   <div class="container ng-cloak">
     <div class="from">
-      <input data-ng-model="timeFrom" type="time">
-      <select data-ng-model="zoneFrom" data-ng-options="zone for zone in zones"></select>
+      <app-zone-input type="from"></app-zone-input>
     </div>
     <div class="to">
       <span class="badge">to</span>
-      <input data-ng-model="timeTo" type="text" readonly="readonly">
-      <select data-ng-model="zoneTo" data-ng-options="zone for zone in zones"></select>
+      <app-zone-input type="to"></app-zone-input>
     </div>
   </div>
 
