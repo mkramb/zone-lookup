@@ -1,17 +1,20 @@
-Install
-----
+### Install
 
-* npm install
-* grunt webkit
-* grunt run
+```sh
+npm install
+grunt compile
+grunt run
+```
 
-Development
-----
+### Development
 
-* grunt run-dev
-* grunt watch
+```sh
+grunt run-dev
+grunt watch
+```
 
-New release
-----
+### New release
 
-* grunt webkit
+```sh
+grunt compile
+```
