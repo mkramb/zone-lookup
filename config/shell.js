@@ -19,6 +19,12 @@ module.exports = {
       ].join(' && ');
     }
   },
+  webdriver: {
+    options: SHELL_OPTIONS,
+    command: function() {
+      return 'webdriver-manager start';
+    }
+  },
   run: {
     options: SHELL_OPTIONS,
     command: function() {

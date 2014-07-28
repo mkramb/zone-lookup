@@ -3,7 +3,6 @@ function testOS(name) {
 }
 
 const NW_VERSION = '0.9.2';
-
 const NW_OPTIONS = {
   version: NW_VERSION,
   build_dir: './',

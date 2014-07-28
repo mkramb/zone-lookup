@@ -31,6 +31,8 @@ module.exports = function(grunt) {
     'browserify:client',
     'less:dev'
   ]);
-  grunt.registerTask('run-dev', [ 'connect:server:keepalive' ]);
-  grunt.registerTask('run', [ 'shell:run' ]);
+  grunt.registerTask('run-webdriver', [ 'shell:webdriver' ]);
+  grunt.registerTask('run-test',      [ 'protractor:app' ]);
+  grunt.registerTask('run-dev',       [ 'connect:server:keepalive' ]);
+  grunt.registerTask('run',           [ 'shell:run' ]);
 };
