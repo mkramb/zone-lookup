@@ -41,5 +41,4 @@ module.exports = function(grunt) {
 
   grunt.registerTask('run-dev', [ 'connect:server:keepalive' ]);
   grunt.registerTask('run', [ 'shell:run' ]);
-
 };

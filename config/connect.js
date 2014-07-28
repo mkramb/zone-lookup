@@ -2,7 +2,7 @@ module.exports = {
   server: {
     options: {
       port: 9000,
-      base: 'build',
+      base: '<%= paths.root %>/build',
       open: true
     }
   }
